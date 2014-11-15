@@ -12,7 +12,7 @@ import javax.swing.JFrame;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 /*
- * Sorry for the super messy code
+ * Sorry for the super messy code...
  */
 
 public class Buttons implements ActionListener {
