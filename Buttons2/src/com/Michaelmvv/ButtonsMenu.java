@@ -18,8 +18,8 @@ public class ButtonsMenu {
 	Color c;
 	Random rand = new Random();
 	public boolean isRandom;
-	JFrame bm = new JFrame("Button Menu");
-	JPanel bmp = new JPanel();
+	JFrame buttonMenu = new JFrame("Button Menu");
+	JPanel buttonPanel = new JPanel();
 	JTextField textField = new JTextField("Random");
 	private JButton setColorButton = new JButton();
 	String text = textField.getText();
@@ -38,18 +38,18 @@ public class ButtonsMenu {
 
 	public void CreateMenu() throws ClassNotFoundException {
 		setColorButton.setText("Set Color");
-		bm.setAlwaysOnTop(true);
-		bm.setName("Color Menu");
-		bm.setResizable(false);
-		bm.setDefaultCloseOperation(DO_NOTHING_ON_CLOSE);
-		bm.setVisible(true);
+		buttonMenu.setAlwaysOnTop(true);
+		buttonMenu.setName("Color Menu");
+		buttonMenu.setResizable(false);
+		buttonMenu.setDefaultCloseOperation(DO_NOTHING_ON_CLOSE);
+		buttonMenu.setVisible(true);
 
-		bm.add(bmp);
+		buttonMenu.add(buttonPanel);
 
-		setColorButton.addActionListener(al);
-		bmp.add(textField);
-		bmp.add(setColorButton);
-		bm.pack();
+		setColorButton.addActionListener(changeColorButton);
+		buttonPanel.add(textField);
+		buttonPanel.add(setColorButton);
+		buttonMenu.pack();
 
 	}
 
@@ -57,7 +57,7 @@ public class ButtonsMenu {
 		return new Color(rand.nextInt(0xFFFFFF));
 	}
 
-	ActionListener al = new ActionListener() {
+	ActionListener changeColorButton = new ActionListener() {
 
 		@Override
 		public void actionPerformed(ActionEvent e) {

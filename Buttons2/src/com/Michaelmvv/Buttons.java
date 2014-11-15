@@ -17,7 +17,7 @@ import javax.swing.JPanel;
 
 public class Buttons implements ActionListener {
 
-	ButtonsMenu bm = new ButtonsMenu();
+	ButtonsMenu buttonMenu = new ButtonsMenu();
 
 	int buttonsPressed = 0;
 	Color backgroundColor;
@@ -39,11 +39,10 @@ public class Buttons implements ActionListener {
 	private void createUI() throws ClassNotFoundException {
 		rightButton.setPreferredSize(NORMAL);
 		leftButton.setPreferredSize(NORMAL);
-		bm.CreateMenu();
+		buttonMenu.CreateMenu();
 		frame.setBounds(0, 100, 100, 100);
 
 		frame.setDefaultCloseOperation(JFrame.DO_NOTHING_ON_CLOSE);
-
 		frame.addWindowListener(new WindowAdapter() {
 			@Override
 			public void windowClosing(WindowEvent e) {
@@ -70,9 +69,9 @@ public class Buttons implements ActionListener {
 		rightButton.addActionListener(this);
 		panel.add(leftButton);
 		panel.add(rightButton);
-
+		frame.setTitle("Click A Button");
 		frame.pack();
-		frame.setTitle("Demanding Buttons");
+		
 	}
 
 	@Override
@@ -93,11 +92,11 @@ public class Buttons implements ActionListener {
 			rightButton.setPreferredSize(SMALL);
 			rightButton.setText("Click Me!");
 		}
-		if (bm.getIsRandom()) {
-			backgroundColor = bm.getRandColor();
+		if (buttonMenu.getIsRandom()) {
+			backgroundColor = buttonMenu.getRandColor();
 
 		} else {
-			backgroundColor = bm.getC();
+			backgroundColor = buttonMenu.getC();
 
 		}
 		frame.setBackground(backgroundColor);
